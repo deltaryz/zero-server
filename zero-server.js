@@ -1,4 +1,5 @@
 const express = require("express");
+const sqlite3 = require("sqlite3").verbose();
 const app = express();
 
 // what should we do when we receive a request?
