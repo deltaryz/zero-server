@@ -2,6 +2,14 @@ const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const app = express();
 
+// initialize database
+let db = new sqlite3.Database("./db/zero.db", err => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log("Connected to the zero database.");
+});
+
 // what should we do when we receive a request?
 app.get("/", function(req, res) {
   console.log(req.query); // print URL parameters to console
