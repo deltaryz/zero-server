@@ -13,7 +13,8 @@ let db = new sqlite3.Database("./zero.db", err => {
 // what should we do when we receive a request?
 app.get("/", function(req, res) {
   console.log("Request received with query:", req.query); // print URL parameters to console
-  res.send("Hello World!"); // reply with hello world
+  let response = { msg: "Hello World!" };
+  res.send(response);
 });
 
 // initiate the server
